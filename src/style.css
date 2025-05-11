@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base font size fixes for mobile */
+html {
+  font-size: 16px;
+}
+
+/* Override small text on mobile */
+@media (max-width: 640px) {
+  html {
+    font-size: 16px !important; /* Enforce minimum font size */
+  }
+
+  /* These overrides ensure text doesn't get too small on mobile */
+  .text-xs, .text-sm, .text-base {
+    font-size: 0.875rem !important; /* 14px minimum */
+  }
+
+  .text-lg, .text-xl {
+    font-size: 1.125rem !important; /* 18px minimum */
+  }
+
+  .text-2xl {
+    font-size: 1.375rem !important; /* 22px minimum */
+  }
+}
+
+/* Custom styling for the app container */
+#app {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure content doesn't get squished */
+.max-w-6xl {
+  max-width: 72rem;
+  width: 100%;
+}
+
+/* Fix chart container size */
+canvas {
+  max-width: 100% !important;
+}
