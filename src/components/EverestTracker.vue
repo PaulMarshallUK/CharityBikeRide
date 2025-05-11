@@ -6,13 +6,13 @@
         <div class="flex-1 mb-4 md:mb-0">
           <h2 class="text-xl font-semibold text-[#005eb8] mb-3 md:mb-4 flex items-center">
             <i class="fas fa-chart-line mr-2 md:mr-3 text-[#22ABE2]"></i>
-            Progress Overview
+            Progress overview
           </h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
             <div class="bg-[#22ABE2] bg-opacity-10 p-3 md:p-4 rounded-lg">
               <p class="text-xs md:text-sm text-gray-600 flex items-center">
                 <i class="fas fa-road mr-2"></i>
-                Distance Covered
+                Distance covered
               </p>
               <p class="text-xl md:text-2xl font-bold text-[#005eb8]">{{ totalDistance.toFixed(1) }} / 250 miles</p>
               <div class="w-full bg-gray-200 h-2 md:h-3 rounded-full mt-2 overflow-hidden">
@@ -25,7 +25,7 @@
             <div class="bg-[#F49131] bg-opacity-10 p-3 md:p-4 rounded-lg">
               <p class="text-xs md:text-sm text-gray-600 flex items-center">
                 <i class="fas fa-mountain mr-2"></i>
-                Elevation Gained
+                Elevation gained
               </p>
               <p class="text-xl md:text-2xl font-bold text-[#005eb8]">{{ totalElevation.toLocaleString() }} / 29,032 ft</p>
               <div class="w-full bg-gray-200 h-2 md:h-3 rounded-full mt-2 overflow-hidden">
@@ -38,7 +38,7 @@
             <div class="bg-[#FFC72C] bg-opacity-10 p-3 md:p-4 rounded-lg">
               <p class="text-xs md:text-sm text-gray-600 flex items-center">
                 <i class="fas fa-clock mr-2"></i>
-                Time Invested
+                Time invested
               </p>
               <p class="text-xl md:text-2xl font-bold text-[#005eb8]">{{ formatTime(totalDuration) }}</p>
               <p class="text-xs md:text-sm text-gray-600 mt-1 md:mt-2">Across {{ rides.length }} rides</p>
@@ -48,7 +48,7 @@
             <div class="bg-[#004467] bg-opacity-10 p-3 md:p-4 rounded-lg">
               <p class="text-xs md:text-sm text-gray-600 flex items-center">
                 <i class="fas fa-donate mr-2"></i>
-                Personal Sponsorship
+                Personal sponsorship
               </p>
               <p class="text-xl md:text-2xl font-bold text-[#005eb8]">£{{ (totalDistance * 0.10).toFixed(2) }}</p>
               <p class="text-xs md:text-sm text-gray-600 mt-1 md:mt-2">10p per mile</p>
@@ -60,7 +60,7 @@
         <div class="flex-1 mt-4 md:mt-0">
           <h2 class="text-xl font-semibold text-[#005eb8] mb-3 md:mb-4 flex items-center">
             <i class="fas fa-flag-checkered mr-2 md:mr-3 text-[#F49131]"></i>
-            Estimated Completion
+            Estimated completion
           </h2>
           <div class="bg-gradient-to-br from-[#005eb8] to-[#22ABE2] p-4 md:p-6 rounded-lg mb-3 md:mb-4 text-white">
             <p class="text-xs md:text-sm">At current pace I'll reach:</p>
@@ -77,7 +77,7 @@
             <div class="bg-gray-50 p-3 md:p-4 rounded-lg text-center">
               <p class="text-xs md:text-sm text-gray-600">
                 <i class="fas fa-tachometer-alt mr-1 md:mr-2"></i>
-                Avg. Speed
+                Avg. speed
               </p>
               <p class="text-lg md:text-xl font-bold text-[#005eb8]">
                 {{ totalDuration > 0 ? (totalDistance / (totalDuration / 60)).toFixed(1) : 0 }} mph
@@ -86,7 +86,7 @@
             <div class="bg-gray-50 p-3 md:p-4 rounded-lg text-center">
               <p class="text-xs md:text-sm text-gray-600">
                 <i class="fas fa-calendar-check mr-1 md:mr-2"></i>
-                Days Remaining
+                Days remaining
               </p>
               <p class="text-lg md:text-xl font-bold text-[#005eb8]">{{ daysRemaining }}</p>
             </div>
@@ -99,7 +99,7 @@
     <div class="bg-white shadow-lg rounded-lg p-4 md:p-6 mb-4 md:mb-8">
       <h2 class="text-xl font-semibold text-[#005eb8] mb-3 md:mb-4 flex items-center">
         <i class="fas fa-chart-area mr-2 md:mr-3 text-[#22ABE2]"></i>
-        Progress Chart
+        Progress chart
       </h2>
       <!-- Chart container -->
       <div class="relative w-full h-64 md:h-96">
@@ -111,7 +111,7 @@
     <div class="bg-white shadow-lg rounded-lg p-4 md:p-6">
       <h2 class="text-xl font-semibold text-[#005eb8] mb-3 md:mb-4 flex items-center">
         <i class="fas fa-list mr-2 md:mr-3 text-[#F49131]"></i>
-        Ride Log
+        Ride log
       </h2>
       <div class="overflow-x-auto">
         <table class="min-w-full">

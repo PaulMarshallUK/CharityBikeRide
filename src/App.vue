@@ -53,7 +53,7 @@
         <div class="bg-gradient-to-r from-[#FFC72C] to-[#F49131] bg-opacity-20 p-4 sm:p-6 rounded-lg">
           <p class="text-lg font-semibold text-[#004467] mb-3 flex items-center">
             <i class="fas fa-donate mr-3"></i>
-            Want to Support?
+            Want to support?
           </p>
           <p class="text-gray-700 mb-4">
             Every contribution helps make a difference! I'm personally committing 10p per mile to the cause.
