@@ -69,7 +69,7 @@
             <p class="text-xs md:text-sm mt-2 md:mt-3">
               {{ estimatedTotalElevation >= 29032 ?
                 `🎉 Summit reached! Exceeding by ${((estimatedTotalElevation / 29032 - 1) * 100).toFixed(1)}%` :
-                `${Math.ceil((29032 - estimatedTotalElevation) / averageElevationPerRide)} more rides needed` }}
+                `${Math.ceil((29032 - totalElevation) / averageElevationPerRide)} more rides needed to reach the summit` }}
             </p>
           </div>
 
