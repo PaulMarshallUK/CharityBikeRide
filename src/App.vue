@@ -4,7 +4,7 @@
     <div class="bg-gradient-to-r from-[#005eb8] to-[#22ABE2] text-white py-6 px-4 md:py-8">
       <div class="max-w-6xl mx-auto text-center">
         <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">The Big Move: Everest Challenge</h1>
-        <p class="text-base sm:text-lg opacity-90">Climbing the equivalent of Mount Everest (29,032 ft) on a bicycle!</p>
+        <p class="text-base sm:text-lg opacity-90">Climbing the equivalent of Mount Everest on a bicycle!</p>
       </div>
     </div>
 
