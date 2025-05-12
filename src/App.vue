@@ -31,7 +31,7 @@
       </div>
 
       <!-- Main tracker component -->
-      <div class="px-0 sm:px-4">
+      <div class="px-0">
         <EverestTracker />
       </div>
 
