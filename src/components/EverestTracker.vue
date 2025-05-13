@@ -219,6 +219,14 @@ const rides = ref([
     distance: 15.8,
     elevation: 1716,
     note: 'Sheep on the road!'
+  },
+  {
+    date: '2025-05-13',
+    startTime: '5:10am',
+    duration: 75.05,
+    distance: 15.79,
+    elevation: 1732,
+    note: 'Nearly roadkilled some breakfast!'
   }
 ])
 
