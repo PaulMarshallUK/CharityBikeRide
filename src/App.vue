@@ -35,6 +35,9 @@
         <EverestTracker />
       </div>
 
+      <!-- Ride Gallery -->
+      <RideGallery />
+
       <!-- Outro section -->
       <div class="bg-white shadow-lg rounded-lg p-4 sm:p-6 my-4 md:my-8">
         <h2 class="text-xl sm:text-2xl font-semibold text-[#005eb8] mb-4 flex items-center">
@@ -72,4 +75,5 @@
 
 <script setup>
 import EverestTracker from './components/EverestTracker.vue'
+import RideGallery from './components/RideGallery.vue'
 </script>
