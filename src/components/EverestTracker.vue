@@ -108,7 +108,7 @@
     </div>
 
     <!-- Ride Log -->
-    <div class="bg-white shadow-lg rounded-lg p-4 md:p-6">
+    <div class="bg-white shadow-lg rounded-lg p-4 md:p-6 mb-4 md:mb-8">
       <h2 class="text-xl font-semibold text-[#005eb8] mb-3 md:mb-4 flex items-center">
         <i class="fas fa-list mr-2 md:mr-3 text-[#F49131]"></i>
         Ride log
@@ -155,6 +155,21 @@
           </tfoot>
         </table>
       </div>
+    </div>
+
+    <!-- E-Bike Explanation Section -->
+    <div class="bg-white shadow-lg rounded-lg p-4 md:p-6">
+      <h2 class="text-xl font-semibold text-[#005eb8] mb-3 md:mb-4 flex items-center">
+        <i class="fas fa-bolt mr-2 md:mr-3 text-[#F49131]"></i>
+        An e-bike! Isn't that cheating!?!
+      </h2>
+      <p class="text-gray-600 mb-4">
+        Well yes a bit, but it's all I've got! But seriously, studies have shown that e-bike riders still have to put in 60-80% of the effort they would need to normally, and those are some steep hills I'm climbing! I could do with some oxygen myself!
+      </p>
+      <p class="text-gray-600">
+        If you're still not convinced, why not put in 60-80% of what you would have donated on a normal bike. I'm sponsoring myself at 10p a mile, so you could do 6-8p a mile, which at my current total would be just
+        <span class="font-semibold text-[#005eb8]">£{{ (totalDistance * 0.06).toFixed(2) }}-£{{ (totalDistance * 0.08).toFixed(2) }}</span>!
+      </p>
     </div>
   </div>
 </template>
@@ -227,6 +242,14 @@ const rides = ref([
     distance: 15.79,
     elevation: 1732,
     note: 'Nearly roadkilled some breakfast!'
+  },
+  {
+    date: '2025-05-15',
+    startTime: '5:04am',
+    duration: 75.25,
+    distance: 15.81,
+    elevation: 1775,
+    note: 'It\'s a bit windy!'
   }
 ])
 

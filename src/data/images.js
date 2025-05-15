@@ -18,6 +18,11 @@ export const galleryImages = [
         orientation: "landscape"
     },
     {
+        src: `${baseUrl}images/portrait-1.jpg`,
+        caption: null,
+        orientation: "portrait"
+    },
+    {
         src: `${baseUrl}images/landscape-4.jpg`,
         caption: "Very peaceful",
         orientation: "landscape"
@@ -33,6 +38,11 @@ export const galleryImages = [
         orientation: "landscape"
     },
     {
+        src: `${baseUrl}images/portrait-2.jpg`,
+        caption: null,
+        orientation: "portrait"
+    },
+    {
         src: `${baseUrl}images/landscape-7.jpg`,
         caption: "Whheee!",
         orientation: "landscape"
@@ -46,6 +56,11 @@ export const galleryImages = [
         src: `${baseUrl}images/landscape-9.jpg`,
         caption: "Nearly a pheasant in the spokes",
         orientation: "landscape"
+    },
+    {
+        src: `${baseUrl}images/portrait-3.jpg`,
+        caption: null,
+        orientation: "portrait"
     },
     {
         src: `${baseUrl}images/landscape-10.jpg`,

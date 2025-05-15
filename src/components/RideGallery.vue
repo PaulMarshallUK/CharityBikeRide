@@ -1,45 +1,55 @@
 <template>
-  <div class="bg-white shadow-lg rounded-lg p-4 md:p-6 mb-4 md:mb-8">
+  <div class="bg-white shadow-lg rounded-lg p-4 md:p-6 my-4 md:my-8">
     <h2 class="text-xl font-semibold text-[#005eb8] mb-3 md:mb-4 flex items-center">
       <i class="fas fa-images mr-2 md:mr-3 text-[#22ABE2]"></i>
       Ride gallery
     </h2>
 
-    <!-- Mobile Swiper Gallery -->
+    <!-- Mobile Swiper Gallery (Full Width) -->
     <div class="block md:hidden">
-      <div class="swiper mySwiper" ref="mobileSwiper">
+      <div class="swiper mobileSwiper" ref="mobileSwiper">
         <div class="swiper-wrapper">
           <div v-for="(image, index) in images" :key="index" class="swiper-slide">
             <a href="#" class="lightbox-link" @click.prevent="openLightbox(image)">
-              <div class="relative overflow-hidden rounded-lg" :class="{'h-64': image.orientation === 'landscape', 'h-80': image.orientation === 'portrait'}">
+              <div class="relative overflow-hidden rounded-lg" :class="{'h-56': image.orientation === 'landscape', 'h-72': image.orientation === 'portrait'}">
                 <img :src="image.src" :alt="image.caption"
                      class="w-full h-full object-cover rounded-lg shadow-md" />
-                <div class="absolute bottom-0 left-0 right-0 p-2 bg-black bg-opacity-50 text-white text-sm">
+                <div
+                    v-if="image.caption"
+                    class="absolute bottom-0 left-0 right-0 p-2 bg-black bg-opacity-50 text-white text-sm">
                   {{ image.caption }}
                 </div>
               </div>
             </a>
           </div>
         </div>
-        <!-- Swiper controls -->
-        <div class="swiper-pagination mt-4"></div>
-        <div class="swiper-button-prev text-[#005eb8]"></div>
-        <div class="swiper-button-next text-[#005eb8]"></div>
+        <!-- Swiper controls (no pagination) -->
+        <div class="swiper-button-prev mobile-nav-button"></div>
+        <div class="swiper-button-next mobile-nav-button"></div>
       </div>
     </div>
 
-    <!-- Desktop Grid Gallery -->
-    <div class="hidden md:grid grid-cols-3 gap-4">
-      <div v-for="(image, index) in images" :key="index"
-           class="block overflow-hidden rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-lg cursor-pointer"
-           @click="openLightbox(image)">
-        <div class="relative" :class="{'h-48': image.orientation === 'landscape', 'h-64': image.orientation === 'portrait'}">
-          <img :src="image.src" :alt="image.caption"
-               class="w-full h-full object-cover rounded-lg shadow-md" />
-          <div class="absolute bottom-0 left-0 right-0 p-2 bg-black bg-opacity-50 text-white text-sm">
-            {{ image.caption }}
+    <!-- Desktop Swiper Gallery (3.5 images showing) -->
+    <div class="hidden md:block">
+      <div class="swiper desktopSwiper" ref="desktopSwiper">
+        <div class="swiper-wrapper">
+          <div v-for="(image, index) in images" :key="index" class="swiper-slide">
+            <a href="#" class="lightbox-link" @click.prevent="openLightbox(image)">
+              <div class="relative overflow-hidden rounded-lg" :class="{'h-48': image.orientation === 'landscape', 'h-64': image.orientation === 'portrait'}">
+                <img :src="image.src" :alt="image.caption"
+                     class="w-full h-full object-cover rounded-lg shadow-md" />
+                <div
+                    v-if="image.caption"
+                    class="absolute bottom-0 left-0 right-0 p-2 bg-black bg-opacity-50 text-white text-sm">
+                  {{ image.caption }}
+                </div>
+              </div>
+            </a>
           </div>
         </div>
+        <!-- Desktop swiper controls -->
+        <div class="swiper-button-prev desktop-nav-button"></div>
+        <div class="swiper-button-next desktop-nav-button"></div>
       </div>
     </div>
 
@@ -55,7 +65,9 @@
       <div class="relative max-w-4xl max-h-[90vh] overflow-hidden" @click.stop>
         <img :src="currentImage?.src" :alt="currentImage?.caption"
              class="max-w-full max-h-[80vh] object-contain rounded shadow-lg" />
-        <div class="absolute bottom-0 left-0 right-0 p-3 bg-black bg-opacity-70 text-white text-center">
+        <div
+            v-if="currentImage?.caption"
+            class="absolute bottom-0 left-0 right-0 p-3 bg-black bg-opacity-70 text-white text-center">
           {{ currentImage?.caption }}
         </div>
         <button @click="closeLightbox"
@@ -74,8 +86,9 @@ import { galleryImages } from '../data/images.js'
 // Image data from external file
 const images = ref(galleryImages);
 
-// Mobile swiper reference
+// Swiper references
 const mobileSwiper = ref(null);
+const desktopSwiper = ref(null);
 
 // Lightbox state
 const lightboxOpen = ref(false);
@@ -98,23 +111,49 @@ const closeLightbox = () => {
 onMounted(() => {
   // Using setTimeout to ensure the DOM is fully rendered
   setTimeout(() => {
-    // Initialize Swiper
+    // Initialize Mobile Swiper
     if (window.Swiper && mobileSwiper.value) {
-      const swiperInstance = new window.Swiper('.mySwiper', {
+      const mobileSwiperInstance = new window.Swiper('.mobileSwiper', {
         slidesPerView: 1,
         spaceBetween: 20,
         loop: true,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true
-        },
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: '.mobileSwiper .swiper-button-next',
+          prevEl: '.mobileSwiper .swiper-button-prev',
         },
         autoplay: {
           delay: 5000,
           disableOnInteraction: false
+        }
+      });
+    }
+
+    // Initialize Desktop Swiper
+    if (window.Swiper && desktopSwiper.value) {
+      const desktopSwiperInstance = new window.Swiper('.desktopSwiper', {
+        slidesPerView: 3.5,
+        spaceBetween: 20,
+        loop: true,
+        navigation: {
+          nextEl: '.desktopSwiper .swiper-button-next',
+          prevEl: '.desktopSwiper .swiper-button-prev',
+        },
+        breakpoints: {
+          // When window width is >= 768px
+          768: {
+            slidesPerView: 3.5,
+            spaceBetween: 20
+          },
+          // When window width is >= 1024px
+          1024: {
+            slidesPerView: 3.5,
+            spaceBetween: 20
+          },
+          // When window width is >= 1280px
+          1280: {
+            slidesPerView: 3.5,
+            spaceBetween: 20
+          }
         }
       });
     }
@@ -132,16 +171,34 @@ onMounted(() => {
 <style scoped>
 .swiper {
   width: 100%;
-  height: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 
 .swiper-slide {
-  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Mobile navigation buttons */
+.mobile-nav-button:after {
+  font-size: 20px !important;
+}
+
+.mobile-nav-button {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+/* Desktop navigation buttons */
+.desktop-nav-button:after {
+  font-size: 24px !important;
+}
+
+.desktop-nav-button {
+  width: 36px !important;
+  height: 36px !important;
 }
 
 /* Override Swiper styles for better visibility */
@@ -149,13 +206,21 @@ onMounted(() => {
 :deep(.swiper-button-prev) {
   color: #005eb8 !important;
   background-color: rgba(255, 255, 255, 0.7);
-  width: 40px !important;
-  height: 40px !important;
   border-radius: 50%;
-  padding: 10px;
+  padding: 8px;
 }
 
-:deep(.swiper-pagination-bullet-active) {
-  background-color: #005eb8 !important;
+:deep(.swiper-button-prev) {
+  left: 5px;
+}
+
+:deep(.swiper-button-next) {
+  right: 5px;
+}
+
+/* Add hover effect */
+:deep(.swiper-button-next:hover),
+:deep(.swiper-button-prev:hover) {
+  background-color: rgba(255, 255, 255, 0.9);
 }
 </style>
