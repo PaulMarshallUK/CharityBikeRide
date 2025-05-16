@@ -49,7 +49,7 @@
         </p>
         <p class="text-gray-600 mb-4">
           By the end of May,
-          I'll have spent over 31 hours on my bike,
+          I'll have spent hours on my bike,
           travelled hundreds of miles,
           and climbed thousands of feet - all for a great cause.
         </p>
