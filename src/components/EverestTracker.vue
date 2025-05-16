@@ -65,6 +65,7 @@
           <div class="bg-gradient-to-br from-[#005eb8] to-[#22ABE2] p-4 md:p-6 rounded-lg mb-3 md:mb-4 text-white">
             <p class="text-xs md:text-sm">At current pace I'll reach:</p>
             <p class="text-xl md:text-2xl font-bold">{{ estimatedTotalDistance.toFixed(0) }} miles</p>
+            <p class="text-lg md:text-xl font-semibold">{{ estimatedTotalElevation.toLocaleString() }} ft</p>
             <p class="text-lg md:text-xl font-semibold">{{ (estimatedTotalElevation / 29032 * 100).toFixed(1) }}% of Mount Everest</p>
             <p class="text-xs md:text-sm mt-2 md:mt-3">
               {{ estimatedTotalElevation >= 29032 ?
@@ -250,6 +251,14 @@ const rides = ref([
     distance: 15.81,
     elevation: 1775,
     note: 'It\'s a bit windy!'
+  },
+  {
+    date: '2025-05-16',
+    startTime: '5:07am',
+    duration: 75.80,
+    distance: 15.81,
+    elevation: 1739,
+    note: '4 deers! 4!'
   }
 ])
 
