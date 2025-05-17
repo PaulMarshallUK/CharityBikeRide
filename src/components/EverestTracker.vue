@@ -14,12 +14,12 @@
                 <i class="fas fa-road mr-2"></i>
                 Distance covered
               </p>
-              <p class="text-xl md:text-2xl font-bold text-[#005eb8]">{{ totalDistance.toFixed(1) }} / 250 miles</p>
+              <p class="text-xl md:text-2xl font-bold text-[#005eb8]">{{ totalDistance.toFixed(1) }} / {{ targetMiles }} miles</p>
               <div class="w-full bg-gray-200 h-2 md:h-3 rounded-full mt-2 overflow-hidden">
                 <div class="bg-[#22ABE2] h-full rounded-full transition-all duration-700"
-                     :style="{width: `${Math.min(totalDistance / 250 * 100, 100)}%`}"></div>
+                     :style="{width: `${Math.min(totalDistance / targetMiles * 100, 100)}%`}"></div>
               </div>
-              <p class="text-xs md:text-sm text-gray-600 mt-1 md:mt-2">{{ (totalDistance / 250 * 100).toFixed(1) }}% complete</p>
+              <p class="text-xs md:text-sm text-gray-600 mt-1 md:mt-2">{{ (totalDistance / targetMiles * 100).toFixed(1) }}% complete</p>
             </div>
 
             <div class="bg-[#F49131] bg-opacity-10 p-3 md:p-4 rounded-lg">
@@ -177,6 +177,8 @@
 
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue'
+
+const targetMiles = 224;
 
 // Ride data
 const rides = ref([
@@ -452,7 +454,7 @@ const initChart = () => {
             text: 'Distance (miles)'
           },
           beginAtZero: true,
-          max: 300,
+          max: 250,
           ticks: {
             callback: function (value) {
               const screenWidth = window.innerWidth;

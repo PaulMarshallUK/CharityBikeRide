@@ -16,8 +16,10 @@
           About the challenge
         </h2>
         <p class="text-gray-600 mb-4">
-          As part of our workplace charity fundraiser, "The Big Move", our team of 8 is aiming to collectively travel 1,000 miles during May.<br/>
-          That's an average of 125 miles per person!<br/>
+          As part of our workplace charity fundraiser for The Children’s Hospital Charity,
+          "The Big Move",
+          our team of 9 is aiming to collectively travel 1,000 miles during May.
+          That's an average of 112 miles per person! 
           But as I'm using an e-bike I've decided to up the challenge!
         </p>
         <p class="text-gray-600 mb-4">
