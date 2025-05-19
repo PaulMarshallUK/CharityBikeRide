@@ -196,7 +196,7 @@ const rides = ref([
     duration: 66.12,
     distance: 13.98,
     elevation: 1450,
-    note: 'Got dive bombed by pheasant!'
+    note: 'Got dive bombed by a pheasant!'
   },
   {
     date: '2025-05-05',
@@ -269,6 +269,14 @@ const rides = ref([
     distance: 15.80,
     elevation: 1742,
     note: '11 deers! (I feel like Count von Count)'
+  },
+  {
+    date: '2025-05-19',
+    startTime: '5:16am',
+    duration: 73.05,
+    distance: 15.81,
+    elevation: 1749,
+    note: 'RAF flypast!'
   }
 ])
 

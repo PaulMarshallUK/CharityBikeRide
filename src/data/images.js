@@ -76,5 +76,10 @@ export const galleryImages = [
         src: `${baseUrl}images/landscape-12.jpg`,
         caption: "Getting trolled by the road",
         orientation: "landscape"
+    },
+    {
+        src: `${baseUrl}images/portrait-4.jpg`,
+        caption: null,
+        orientation: "portrait"
     }
 ];
