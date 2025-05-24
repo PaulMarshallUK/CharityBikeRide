@@ -216,7 +216,7 @@
                 {{ formatTime(ride.duration) }}
               </td>
               <td class="py-2 px-2 md:py-3 md:px-4">
-                <span class="text-gray-600 italic text-sm md:text-base">{{
+                <span class="text-gray-600 text-sm md:text-base">{{
                   ride.note || "-"
                 }}</span>
               </td>
@@ -381,6 +381,14 @@ const rides = ref([
     distance: 15.81,
     elevation: 1768,
     note: "Cold and foggy!",
+  },
+  {
+    date: "2025-05-24",
+    startTime: "5:27am",
+    duration: 98.5,
+    distance: 19.29,
+    elevation: 1870,
+    note: "Windy? ✅ Rainy? ✅ Foggy? ✅ Happy? 😬",
   },
 ]);
 
