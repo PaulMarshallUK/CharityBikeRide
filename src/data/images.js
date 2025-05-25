@@ -92,4 +92,9 @@ export const galleryImages = [
     caption: "A real pea souper!",
     orientation: "landscape",
   },
+  {
+    src: `${baseUrl}images/portrait-5.jpg`,
+    caption: null,
+    orientation: "portrait",
+  },
 ];

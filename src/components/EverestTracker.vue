@@ -390,6 +390,14 @@ const rides = ref([
     elevation: 1870,
     note: "Windy? ✅ Rainy? ✅ Foggy? ✅ Happy? 😬",
   },
+  {
+    date: "2025-05-25",
+    startTime: "5:55am",
+    duration: 81.05,
+    distance: 15.81,
+    elevation: 1732,
+    note: "How can there be a permanent headwind?!",
+  },
 ]);
 
 // Chart reference
