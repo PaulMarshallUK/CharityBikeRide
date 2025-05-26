@@ -398,6 +398,14 @@ const rides = ref([
     elevation: 1732,
     note: "How can there be a permanent headwind?!",
   },
+  {
+    date: "2025-05-26",
+    startTime: "5:43am",
+    duration: 140.75,
+    distance: 28.15,
+    elevation: 2077,
+    note: "Bank holiday business!",
+  },
 ]);
 
 // Chart reference
@@ -594,7 +602,7 @@ const initChart = () => {
             text: "Distance (miles)",
           },
           beginAtZero: true,
-          max: 250,
+          max: 300,
           ticks: {
             callback: function (value) {
               const screenWidth = window.innerWidth;
