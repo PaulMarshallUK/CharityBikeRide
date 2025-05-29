@@ -406,6 +406,14 @@ const rides = ref([
     elevation: 2077,
     note: "Bank holiday business!",
   },
+  {
+    date: "2025-05-29",
+    startTime: "5:46am",
+    duration: 89,
+    distance: 19.66,
+    elevation: 1860,
+    note: "Hood under the helmet kind of a day!",
+  },
 ]);
 
 // Chart reference
