@@ -13,19 +13,24 @@ export const galleryImages = [
     orientation: "landscape",
   },
   {
-    src: `${baseUrl}images/landscape-3.jpg`,
-    caption: "Out in the wilderness",
-    orientation: "landscape",
-  },
-  {
     src: `${baseUrl}images/portrait-1.jpg`,
     caption: null,
     orientation: "portrait",
   },
   {
+    src: `${baseUrl}images/landscape-3.jpg`,
+    caption: "Out in the wilderness",
+    orientation: "landscape",
+  },
+  {
     src: `${baseUrl}images/landscape-4.jpg`,
     caption: "Very peaceful",
     orientation: "landscape",
+  },
+  {
+    src: `${baseUrl}images/portrait-2.jpg`,
+    caption: null,
+    orientation: "portrait",
   },
   {
     src: `${baseUrl}images/landscape-5.jpg`,
@@ -38,7 +43,7 @@ export const galleryImages = [
     orientation: "landscape",
   },
   {
-    src: `${baseUrl}images/portrait-2.jpg`,
+    src: `${baseUrl}images/portrait-3.jpg`,
     caption: null,
     orientation: "portrait",
   },
@@ -53,19 +58,24 @@ export const galleryImages = [
     orientation: "landscape",
   },
   {
+    src: `${baseUrl}images/portrait-4.jpg`,
+    caption: null,
+    orientation: "portrait",
+  },
+  {
     src: `${baseUrl}images/landscape-9.jpg`,
     caption: "Nearly a pheasant in the spokes",
     orientation: "landscape",
   },
   {
-    src: `${baseUrl}images/portrait-3.jpg`,
-    caption: null,
-    orientation: "portrait",
-  },
-  {
     src: `${baseUrl}images/landscape-10.jpg`,
     caption: "Racing jet planes",
     orientation: "landscape",
+  },
+  {
+    src: `${baseUrl}images/portrait-5.jpg`,
+    caption: null,
+    orientation: "portrait",
   },
   {
     src: `${baseUrl}images/landscape-11.jpg`,
@@ -78,7 +88,7 @@ export const galleryImages = [
     orientation: "landscape",
   },
   {
-    src: `${baseUrl}images/portrait-4.jpg`,
+    src: `${baseUrl}images/portrait-6.jpg`,
     caption: null,
     orientation: "portrait",
   },
@@ -93,8 +103,8 @@ export const galleryImages = [
     orientation: "landscape",
   },
   {
-    src: `${baseUrl}images/portrait-5.jpg`,
-    caption: null,
+    src: `${baseUrl}images/portrait-7.jpg`,
+    caption: "See I do all my own stunts!",
     orientation: "portrait",
   },
 ];

@@ -414,6 +414,14 @@ const rides = ref([
     elevation: 1860,
     note: "Hood under the helmet kind of a day!",
   },
+  {
+    date: "2025-05-30",
+    startTime: "5:27am",
+    duration: 102.67,
+    distance: 21.29,
+    elevation: 2136,
+    note: "The Grand Finale!",
+  },
 ]);
 
 // Chart reference
@@ -610,7 +618,7 @@ const initChart = () => {
             text: "Distance (miles)",
           },
           beginAtZero: true,
-          max: 300,
+          max: 350,
           ticks: {
             callback: function (value) {
               const screenWidth = window.innerWidth;
