@@ -93,56 +93,27 @@
           <h2
             class="text-xl font-semibold text-[#005eb8] mb-3 md:mb-4 flex items-center"
           >
-            <i class="fas fa-flag-checkered mr-2 md:mr-3 text-[#F49131]"></i>
-            Estimated completion
+            <i class="fas fa-trophy mr-2 md:mr-3 text-[#F49131]"></i>
+            Challenge completed!
           </h2>
           <div
             class="bg-gradient-to-br from-[#005eb8] to-[#22ABE2] p-4 md:p-6 rounded-lg mb-3 md:mb-4 text-white"
           >
-            <p class="text-xs md:text-sm">At current pace I'll reach:</p>
+            <p class="text-xs md:text-sm">Final achievements:</p>
             <p class="text-xl md:text-2xl font-bold">
-              {{ estimatedTotalDistance.toFixed(0) }} miles
+              {{ totalDistance.toFixed(1) }} miles
             </p>
             <p class="text-lg md:text-xl font-semibold">
-              {{ estimatedTotalElevation.toLocaleString() }} ft
+              {{ totalElevation.toLocaleString() }} ft
             </p>
             <p class="text-lg md:text-xl font-semibold">
-              {{ ((estimatedTotalElevation / 29032) * 100).toFixed(1) }}% of
-              Mount Everest
+              {{ ((totalElevation / 29032) * 100).toFixed(1) }}% of Mount
+              Everest
             </p>
             <p class="text-xs md:text-sm mt-2 md:mt-3">
-              {{
-                estimatedTotalElevation >= 29032
-                  ? `🎉 Summit reached! Exceeding by ${((estimatedTotalElevation / 29032 - 1) * 100).toFixed(1)}%`
-                  : `${Math.ceil((29032 - totalElevation) / averageElevationPerRide)} more rides needed to reach the summit`
-              }}
+              🎉 Mission accomplished! Target exceeded by
+              {{ ((totalDistance / targetMiles - 1) * 100).toFixed(1) }}%
             </p>
-          </div>
-
-          <div class="grid grid-cols-2 gap-3 md:gap-4">
-            <div class="bg-gray-50 p-3 md:p-4 rounded-lg text-center">
-              <p class="text-xs md:text-sm text-gray-600">
-                <i class="fas fa-tachometer-alt mr-1 md:mr-2"></i>
-                Avg. speed
-              </p>
-              <p class="text-lg md:text-xl font-bold text-[#005eb8]">
-                {{
-                  totalDuration > 0
-                    ? (totalDistance / (totalDuration / 60)).toFixed(1)
-                    : 0
-                }}
-                mph
-              </p>
-            </div>
-            <div class="bg-gray-50 p-3 md:p-4 rounded-lg text-center">
-              <p class="text-xs md:text-sm text-gray-600">
-                <i class="fas fa-calendar-check mr-1 md:mr-2"></i>
-                Days remaining
-              </p>
-              <p class="text-lg md:text-xl font-bold text-[#005eb8]">
-                {{ daysRemaining }}
-              </p>
-            </div>
           </div>
         </div>
       </div>
@@ -244,7 +215,7 @@
     </div>
 
     <!-- E-Bike Explanation Section -->
-    <div class="bg-white shadow-lg rounded-lg p-4 md:p-6">
+    <div class="bg-white shadow-lg rounded-lg p-4 md:p-6 hidden">
       <h2
         class="text-xl font-semibold text-[#005eb8] mb-3 md:mb-4 flex items-center"
       >
